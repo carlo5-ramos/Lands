@@ -11,7 +11,7 @@ namespace Lands
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            this.MainPage = new Views.LoginPage();
         }
 
         protected override void OnStart()
