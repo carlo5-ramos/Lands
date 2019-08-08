@@ -160,4 +160,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\logoonu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logotwitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoinstagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logofacebook.png" />
+  </ItemGroup>
 </Project>
