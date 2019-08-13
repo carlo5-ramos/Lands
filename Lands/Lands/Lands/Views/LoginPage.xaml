@@ -65,13 +65,15 @@
                             HeightRequest="46"
                             FontAttributes="Bold"
                             HorizontalOptions="FillAndExpand"
-                            Command="{Binding LoginCommand}"/>
+                            Command="{Binding LoginCommand}"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
                     <Button Text="Register"
                             BackgroundColor="Purple"
                             TextColor="White"
                             BorderRadius="23"
                             HeightRequest="46"
-                            HorizontalOptions="FillAndExpand"/>
+                            HorizontalOptions="FillAndExpand"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="Center"
