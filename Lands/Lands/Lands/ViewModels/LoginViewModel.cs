@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Lands.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -11,14 +12,18 @@ namespace Lands.ViewModels
         #endregion
 
         #region Attirbutes
-        //private string email;
+        private string email;
         private string password;
         private bool isRunning;
         private bool isEnabled;
         #endregion
 
         #region Properties
-        public string Email { get; set; }
+        public string Email
+        {
+            get { return email; }
+            set { SetValue(ref email, value); }
+        }
         public string Password
         {
             get  {  return password; }
@@ -44,9 +49,11 @@ namespace Lands.ViewModels
             this.IsRemembered = true;
             this.IsEnabled = true;
 
+            this.Email = "admin@gmail.com";
+            this.Password = "admin";
         }
         #endregion
-
+        
         #region Commands
         public ICommand LoginCommand
         {
@@ -94,10 +101,12 @@ namespace Lands.ViewModels
 
             this.IsRunning = false;
             this.IsEnabled = true;
-            await Application.Current.MainPage.DisplayAlert(
-                    "Ok",
-                    "Sesión iniciada :) ...",
-                    "Accept");
+
+            this.Email = string.Empty;
+            this.Password = string.Empty;
+
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            await App.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
         #endregion
     }
