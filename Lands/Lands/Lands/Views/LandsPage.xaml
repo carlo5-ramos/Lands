@@ -7,6 +7,9 @@
     <ContentPage.Content>
         <StackLayout Padding="5"
                      BindingContext="{Binding Lands}">
+            <SearchBar Placeholder="Search..."
+                       Text="{Binding Filter, Mode=TwoWay}" 
+                       SearchCommand="{Binding SearchCommand}"/>
             <ListView HasUnevenRows="True"
                       IsPullToRefreshEnabled="True" 
                       IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
@@ -29,9 +32,12 @@
                                            FontSize="Medium"
                                            Text="{Binding Name}"
                                            TextColor="Black"/>
-                                    <Label Text="{Binding Capital}" />
-
+                                    <Label Text="{Binding Capital}"
+                                           TextColor="Black"/>
                                 </StackLayout>
+                                <Image Grid.Column="1"
+                                       HorizontalOptions="End"
+                                       Source="checkder"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
