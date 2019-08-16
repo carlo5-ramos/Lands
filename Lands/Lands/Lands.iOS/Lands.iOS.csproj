@@ -169,4 +169,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\logofacebook.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checkder.png" />
+  </ItemGroup>
 </Project>

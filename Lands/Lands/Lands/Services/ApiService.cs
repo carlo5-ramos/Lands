@@ -19,11 +19,11 @@ namespace Lands.Services
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Please turn on your internet settimgs.",
+                    Message = "Please turn on your internet settings.",
                 };
             }
-            var isReachable = await CrossConnectivity.Current.IsRemoteReachable(
-                "google.com");
+            var uri = "https://www.google.com/";
+            var isReachable = await CrossConnectivity.Current.IsRemoteReachable(uri);
             if (!isReachable)
             {
                 return new Response

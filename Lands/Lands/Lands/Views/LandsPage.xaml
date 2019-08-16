@@ -7,9 +7,37 @@
     <ContentPage.Content>
         <StackLayout Padding="5"
                      BindingContext="{Binding Lands}">
-            <Label Text="LandsPage!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True" 
+                      IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                      ItemsSource="{Binding Lands}"
+                      RefreshCommand="{Binding RefreshCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0"
+                                             VerticalOptions="Center">
+                                    <Label FontAttributes="Bold"
+                                           FontSize="Medium"
+                                           Text="{Binding Name}"
+                                           TextColor="Black"/>
+                                    <Label Text="{Binding Capital}" />
+
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
