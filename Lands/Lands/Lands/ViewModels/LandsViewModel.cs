@@ -41,7 +41,11 @@ namespace Lands.ViewModels
         public string Filter
         {
             get { return this.filter; }
-            set { SetValue(ref this.filter, value); }
+            set
+            {
+                SetValue(ref this.filter, value);
+                this.Search();
+            }
         }
         #endregion
 
@@ -110,7 +114,8 @@ namespace Lands.ViewModels
             else
             {
                 this.Lands = new ObservableCollection<Land>(this.landList.Where(l => l.Name.ToLower().Contains(
-                    this.Filter.ToLower())));
+                    this.Filter.ToLower()) || 
+                    l.Capital.ToLower().Contains(this.Filter.ToLower())));
             }
         }
         #endregion
