@@ -170,6 +170,21 @@
     <BundleResource Include="Resources\logofacebook.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\checkder.png" />
+    <BundleResource Include="Resources\ic_checkder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_lenguages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_translate.png" />
   </ItemGroup>
 </Project>

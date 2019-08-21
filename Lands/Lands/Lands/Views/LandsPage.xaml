@@ -43,7 +43,7 @@
                                     </StackLayout>
                                     <Image Grid.Column="1"
                                        HorizontalOptions="End"
-                                       Source="checkder"/>
+                                       Source="ic_checkder"/>
                                 </Grid>
                             </Frame>
                         </ViewCell>
