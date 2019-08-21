@@ -7,6 +7,9 @@ namespace Lands.ViewModels
 {
     public class LandViewModel
     {
+        #region MyRegion
+
+        #endregion
 
         #region Properties
         public Land Land { get; set; }
