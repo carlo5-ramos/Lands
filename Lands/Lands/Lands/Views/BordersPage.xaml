@@ -6,10 +6,36 @@
              Icon="ic_lenguages"
              Title="Borders">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Borders"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BindingContext="{Binding Land}"
+                     Padding="5">
+            <Label FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Text="{Binding Land.Name}"
+                       TextColor="Black"/>
+            <ListView HasUnevenRows="True"
+                      ItemsSource="{Binding Borders}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" 
+                                       FontAttributes="Bold"
+                                       FontSize="Medium"
+                                       Text="{Binding Code}"
+                                       TextColor="Black"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding Name}"
+                                       TextColor="Black"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
