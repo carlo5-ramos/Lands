@@ -1,0 +1,2 @@
+connectionString="Data Source=servicesapi.database.windows.net; Initial Catalog=pruebasapi_bd; Persist Security Info=False; User=jc_ramos01; Password=juan.carlos10;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;"
+         providerName="System.Data.SqlClient"

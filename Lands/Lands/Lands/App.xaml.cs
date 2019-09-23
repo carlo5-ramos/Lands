@@ -10,7 +10,6 @@ namespace Lands
         public App()
         {
             InitializeComponent();
-
             this.MainPage = new NavigationPage(new Views.LoginPage());
         }
 

@@ -7,6 +7,8 @@ namespace Lands.ViewModels
     {
         #region Properties
         public List<Land> LandList { get; set; }
+
+        public TokenResponse Token { get; set; }
         #endregion
 
         #region ViewModels
