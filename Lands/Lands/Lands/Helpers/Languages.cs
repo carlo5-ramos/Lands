@@ -26,5 +26,15 @@ namespace Lands.Helpers
         {
             get { return Resource.Error; }
         }
+
+        public static string EmailPlaceHolder
+        {
+            get { return Resource.EmailPlaceHolder; }
+        }
+
+        public static string Rememberme
+        {
+            get { return Resource.Rememberme; }
+        }
     }
 }

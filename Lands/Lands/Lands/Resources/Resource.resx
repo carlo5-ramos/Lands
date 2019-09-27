@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="a" xml:space="preserve">
-    <value />
+  <data name="Rememberme" xml:space="preserve">
+    <value>Rememberme on this device</value>
   </data>
   <data name="Accept" xml:space="preserve">
     <value>Accept</value>
@@ -128,5 +128,8 @@
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Enter your email</value>
   </data>
 </root>

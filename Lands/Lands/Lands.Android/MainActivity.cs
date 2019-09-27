@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using FFImageLoading.Forms.Platform;
+using FFImageLoading.Forms.Droid;
 
 namespace Lands.Droid
 {

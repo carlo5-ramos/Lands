@@ -1,33 +1,28 @@
 ﻿using System.Globalization;
 using System.Threading;
-using Foundation;
 using Lands.Helpers;
 using Lands.Interfaces;
 
-[assembly: Xamarin.Forms.Dependency(typeof(Lands.iOS.Implementations.Localize))]
-namespace Lands.iOS.Implementations
+[assembly: Xamarin.Forms.Dependency(typeof(Lands.Droid.Implementations.Localize))]
+namespace Lands.Droid.Implementations
 {
     public class Localize : ILocalize
     {
         public CultureInfo GetCurrentCultureInfo()
         {
-            var netLenguage = "en";
-            if (NSLocale.PreferredLanguages.Length > 0)
-            {
-                var pref = NSLocale.PreferredLanguages[0];
-                netLenguage = iOSToDonetLanguage(pref);
-            }
-
+            var netLanguage = "en";
+            var androidLocale = Java.Util.Locale.Default;
+            netLanguage = AndroidToDotnetLanguage(androidLocale.ToString().Replace("_", "-"));
             System.Globalization.CultureInfo ci = null;
             try
             {
-                ci = new System.Globalization.CultureInfo(netLenguage);
+                ci = new System.Globalization.CultureInfo(netLanguage);
             }
             catch (CultureNotFoundException e1)
             {
                 try
                 {
-                    var fallback = ToDotnetFallbackLanguage(new PlatformCulture(netLenguage));
+                    var fallback = ToDotnetFallbackLanguage(new PlatformCulture(netLanguage));
                     ci = new System.Globalization.CultureInfo(fallback);
                 }
                 catch (CultureNotFoundException e2)
@@ -44,14 +39,18 @@ namespace Lands.iOS.Implementations
             Thread.CurrentThread.CurrentUICulture = ci;
         }
 
-        string iOSToDonetLanguage(string iOSLanguage)
+        string AndroidToDotnetLanguage(string androidLanguage)
         {
-            var netLanguage = iOSLanguage;
-            switch (iOSLanguage)
+            var netLanguage = androidLanguage;
+            switch (androidLanguage)
             {
+                case "ms-BN":
                 case "ms-MY":
-                case "ms-GS":
+                case "ms-SG":
                     netLanguage = "ms";
+                    break;
+                case "in-ID":
+                    netLanguage = "id-ID";
                     break;
                 case "gsw-CH":
                     netLanguage = "de-CH";
@@ -59,14 +58,12 @@ namespace Lands.iOS.Implementations
             }
             return netLanguage;
         }
-        string ToDotnetFallbackLanguage(PlatformCulture platformCulture)
+
+        string ToDotnetFallbackLanguage(PlatformCulture platCulture)
         {
-            var netLanguage = platformCulture.LanguageCode;
-            switch (platformCulture.LanguageCode)
+            var netLanguage = platCulture.LanguageCode;
+            switch (platCulture.LanguageCode)
             {
-                case "pt":
-                    netLanguage = "pt-PT";
-                    break;
                 case "gsw":
                     netLanguage = "de-CH";
                     break;

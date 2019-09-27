@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Lands.Helpers;
 using Lands.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -69,9 +70,9 @@ namespace Lands.ViewModels
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Your must enter an email",
-                    "Accept");
+                    Languages.Error,
+                    Languages.EmailValidation,
+                    Languages.Accept);
                 return;
             }
 
